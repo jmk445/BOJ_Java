@@ -11,9 +11,9 @@ public class P1316 {
         int N = sc.nextInt();
         int answer = N;
         String[] arr = new String[N];
-        for(int i = 0 ; i <= N; i++){
-            arr[i] = sc.nextLine();
-            System.out.println(arr[i]);
+        for(int i = 0 ; i < N; i++){
+            arr[i] = sc.next();
+//            System.out.println(arr[i]);
         }
 
         for(int i = 0; i < N; i++){
@@ -46,19 +46,17 @@ public class P1316 {
             map.put('y',false);
             map.put('z',false);
 
-//            System.out.println(arr[i]);
             char before = arr[i].charAt(0);
-//            System.out.println(before);
             map.replace(arr[i].charAt(0), false, true);
-
+            boolean is_group = true;
             for(int j = 1; j < arr[i].length(); j++){
                 if(!map.get(arr[i].charAt(j))){
                     before = arr[i].charAt(j);
                     map.replace(arr[i].charAt(j), false, true);
                 }else{
                     if(before != arr[i].charAt(j)){
-//                        System.out.println( arr[i]);
                         answer--;
+                        break;
                     }
                 }
             }
