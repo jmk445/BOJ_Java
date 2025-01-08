@@ -1,5 +1,6 @@
 package P1094;
 
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
